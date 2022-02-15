@@ -47,8 +47,8 @@ class Board
     # helper method to determine whether #make_move returns :switch, :prompt, or ending_cup_idx
     ending_cup = @cups[ending_cup_idx]
     return :switch if ending_cup.count == 1
-    return ending_cup_idx if ending_cup.count > 1
-    return :prompt if ending_cup_idx.between?(0,5) && ending_cup_idx != 13 || (ending_cup_idx - 1).between?(7,12) && ending_cup_idx != 7
+    return :prompt if ending_cup_idx == 6 || ending_cup_idx == 13
+    ending_cup_idx
   end
 
   def render
