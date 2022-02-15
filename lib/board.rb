@@ -35,7 +35,7 @@ class Board
     stones_count.times do |n|
       curr_pos = (start_pos + n) % 12
       curr_cup = @cups[curr_pos]
-      if (start_pos - 1).between?(0,5) && curr_pos != 13 || (start_pos - 1).between?(7,12) && curr_pos != 7
+      if current_player_name == @player2_name && curr_pos != 13 || (current_player_name == @player1_name && curr_pos != 7
         curr_cup << :stone 
       end
     end
